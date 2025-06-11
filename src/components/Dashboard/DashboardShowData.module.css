@@ -1,0 +1,18 @@
+.container {
+  background-color: #1C1A1D;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.container h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.container strong {
+  align-self: center;
+  font-size: 4rem;
+  font-weight: 200;
+}

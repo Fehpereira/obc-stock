@@ -1,0 +1,17 @@
+.textarea {
+  grid-row: 4/9;
+  grid-column: 1/5;
+  margin-block: 1rem;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  border: none;
+  border-radius: 6px;
+  padding: 2rem;
+  font-size: 1.125rem;
+}
+
+.label {
+  grid-row: 3;
+  align-self: flex-end;
+  max-width: fit-content;
+}

@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.headerItem {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.title {
+  font-weight: 300;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.dataWrapper {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.data {
+  background-color:#1C1A1D;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+}
+
+.descriptionWrapper span:nth-child(3) {
+  margin-left: 2rem;
+}
+
+.description {
+  max-width: 50%;
+  margin-block: 2rem;
+}

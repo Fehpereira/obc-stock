@@ -1,0 +1,14 @@
+.label {
+  max-width: fit-content;
+  grid-row: 1;
+  align-self: flex-end;
+  margin-bottom: .5rem;
+}
+
+.input {
+  grid-row: 2;
+  padding: .5rem 1rem;
+  border: none;
+  background-color: #1C1A1D;
+  border-radius: 6px;
+}

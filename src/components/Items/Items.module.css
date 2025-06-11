@@ -1,0 +1,8 @@
+.links {
+  margin: 1rem;
+}
+
+.active {
+  text-decoration: underline;
+  color: white;
+}
