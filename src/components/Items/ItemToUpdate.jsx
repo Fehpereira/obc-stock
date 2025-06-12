@@ -9,8 +9,6 @@ const ItemToUpdate = () => {
   const { updateItem, setUpdateItem, items, handleUpdateItem } =
     useContext(DashboardContext);
 
-  if (!updateItem) return <Error />;
-
   const { idItemUpdate } = useParams();
 
   useEffect(() => {
@@ -23,6 +21,8 @@ const ItemToUpdate = () => {
       setUpdateItem({});
     };
   }, []);
+
+  if (!updateItem) return <Error />;
 
   return (
     <ItemsCreate callback={handleUpdateItem}>

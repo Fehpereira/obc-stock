@@ -79,6 +79,10 @@ button:focus-visible {
   margin-block: 1rem;
 }
 
+textarea {
+  resize: none;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
