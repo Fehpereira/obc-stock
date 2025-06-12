@@ -1,10 +1,32 @@
+import { useState, useEffect } from 'react';
 import styles from './DashboardShowData.module.css';
 
 const DashboardShowData = ({ reference, total }) => {
+  const [totalToAnimate, setTotalToAnimate] = useState(0);
+
+  useEffect(() => {
+    if (total === 0) return;
+
+    const i = Math.floor(total / 100);
+    let current = 0;
+    const interval = setInterval(() => {
+      current += i;
+      setTotalToAnimate(current);
+
+      if (current >= total) {
+        clearInterval(interval);
+        current = total;
+        setTotalToAnimate(current);
+      }
+    }, 25);
+
+    return () => clearInterval(interval);
+  }, [total]);
+
   return (
     <div className={styles.container}>
       <h3>{reference}</h3>
-      <strong>{total}</strong>
+      <strong>{totalToAnimate}</strong>
     </div>
   );
 };
