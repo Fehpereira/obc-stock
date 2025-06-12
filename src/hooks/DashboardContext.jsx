@@ -111,6 +111,11 @@ export const DashboardProvider = ({ children }) => {
   }
 
   useEffect(() => {
+    if (!items.length || items.length <= 0) {
+      setRecentItems([]);
+      setTotalInventory(0);
+      setItemsRunningOut([]);
+    }
     if (items.length > 0) {
       setTotalInventory(sumTotalItems(items));
 
@@ -127,11 +132,6 @@ export const DashboardProvider = ({ children }) => {
       } else if (items.length >= 1) {
         setRecentItems([items[0]]);
       }
-    }
-    if (!items.length) {
-      setRecentItems([]);
-      setTotalInventory(0);
-      setItemsRunningOut([]);
     }
   }, [items]);
 
