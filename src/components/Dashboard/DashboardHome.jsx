@@ -17,18 +17,22 @@ const DashboardHome = () => {
         <DashboardShowData
           reference={'Diversidade de itens'}
           total={items.length}
+          timing={items.length > 15 ? 200 : 300}
         />
         <DashboardShowData
           reference={'Inventário total'}
           total={totalInventory}
+          timing={45}
         />
         <DashboardShowData
           reference={'Itens recentes'}
           total={recentItems.length}
+          timing={525}
         />
         <DashboardShowData
           reference={'Itens acabando'}
           total={itemsRunningOut.length}
+          timing={550}
         />
 
         <DashboardTable title={'Itens recentes'} itemsShow={recentItems} />

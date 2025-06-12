@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './DashboardShowData.module.css';
 
-const DashboardShowData = ({ reference, total }) => {
+const DashboardShowData = ({ reference, total, timing }) => {
   const [totalToAnimate, setTotalToAnimate] = useState(0);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const DashboardShowData = ({ reference, total }) => {
         current = total;
         setTotalToAnimate(current);
       }
-    }, 25 * Math.random());
+    }, timing * Math.random());
 
     return () => clearInterval(interval);
   }, [total]);
