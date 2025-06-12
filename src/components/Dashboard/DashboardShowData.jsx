@@ -7,7 +7,11 @@ const DashboardShowData = ({ reference, total }) => {
   useEffect(() => {
     if (total === 0) return;
 
-    const i = Math.floor(total / 100);
+    let i = 1;
+    if (total > 100) {
+      i = Math.floor(total / 100);
+    }
+
     let current = 0;
     const interval = setInterval(() => {
       current += i;
@@ -18,7 +22,7 @@ const DashboardShowData = ({ reference, total }) => {
         current = total;
         setTotalToAnimate(current);
       }
-    }, 25);
+    }, 25 * Math.random());
 
     return () => clearInterval(interval);
   }, [total]);
