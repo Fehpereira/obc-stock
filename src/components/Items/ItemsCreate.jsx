@@ -7,7 +7,7 @@ import styles from './ItemsCreate.module.css';
 import TextArea from '../Forms/TextArea';
 
 const ItemsCreate = ({ callback, children }) => {
-  const textRegex = /^[a-zA-Z0-9]*$/;
+  const textRegex = /^[\w\sÀ-ÿ]*$/;
   const numberRegex = /^\d*$/;
   const areaRegex = /^[a-zA-Z0-9\s:./?!-]*$/;
 

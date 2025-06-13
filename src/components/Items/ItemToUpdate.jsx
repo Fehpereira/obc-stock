@@ -6,19 +6,40 @@ import { DashboardContext } from '../../hooks/DashboardContext';
 import styles from './ItemToUpdate.module.css';
 
 const ItemToUpdate = () => {
-  const { updateItem, setUpdateItem, items, handleUpdateItem } =
-    useContext(DashboardContext);
+  const {
+    updateItem,
+    setUpdateItem,
+    items,
+    handleUpdateItem,
+    setNameItem,
+    setTotal,
+    setPrice,
+    setCategory,
+    setDescription,
+  } = useContext(DashboardContext);
 
   const { idItemUpdate } = useParams();
 
   useEffect(() => {
     const itemToUpdate = items.find((item) => item.idItem === idItemUpdate);
+    if (!itemToUpdate) return;
+
     setUpdateItem(itemToUpdate);
+    setNameItem(itemToUpdate.nameItem);
+    setTotal(itemToUpdate.total);
+    setPrice(itemToUpdate.price);
+    setCategory(itemToUpdate.category);
+    setDescription(itemToUpdate.description);
   }, [idItemUpdate, items]);
 
   useEffect(() => {
     return () => {
       setUpdateItem({});
+      setNameItem('');
+      setTotal('');
+      setPrice('');
+      setCategory('');
+      setDescription('');
     };
   }, []);
 
