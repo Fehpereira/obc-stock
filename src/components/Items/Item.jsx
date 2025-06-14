@@ -10,8 +10,6 @@ import styles from './Item.module.css';
 const Item = () => {
   const { showItem, setShowItem, items } = useContext(DashboardContext);
 
-  if (!showItem) return <Error />;
-
   const { idItem } = useParams();
 
   useEffect(() => {
@@ -24,6 +22,8 @@ const Item = () => {
       setShowItem({});
     };
   }, []);
+
+  if (!showItem) return <Error />;
 
   const {
     nameItem,

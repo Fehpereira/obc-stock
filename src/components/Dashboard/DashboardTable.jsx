@@ -28,9 +28,9 @@ const DashboardTable = ({ title, itemsShow }) => {
         style={
           titleIsId
             ? {
-                display: 'grid',
-                gridTemplateColumns: 'repeat(5, 1fr)',
-              }
+              display: 'grid',
+              gridTemplateColumns: 'repeat(5, 1fr)',
+            }
             : { display: 'grid' }
         }
       >
@@ -50,63 +50,63 @@ const DashboardTable = ({ title, itemsShow }) => {
       <div>
         {titleIsId
           ? items.map(({ idItem, nameItem, total, category }) => {
-              return (
-                <div
-                  className={styles.item}
-                  key={idItem}
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(5, 1fr)',
-                  }}
-                >
-                  <p style={marginInlineAuto}>{idItem}</p>
-                  <p>{nameItem}</p>
+            return (
+              <div
+                className={styles.item}
+                key={idItem}
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(5, 1fr)',
+                }}
+              >
+                <p style={marginInlineAuto}>{idItem}</p>
+                <p>{nameItem}</p>
 
-                  <p style={marginInlineAuto}>{total} unid.</p>
-                  <p style={marginInlineAuto}>{category}</p>
+                <p style={marginInlineAuto}>{total} unid.</p>
+                <p style={marginInlineAuto}>{category}</p>
 
-                  <div className={styles.buttonsWrapper}>
-                    <ShowButton
-                      idItemShow={idItem}
-                      style={{
-                        backgroundColor: '#58A7FF',
-                      }}
-                    >
-                      Ver
-                    </ShowButton>
+                <div className={styles.buttonsWrapper}>
+                  <ShowButton
+                    idItemShow={idItem}
+                    style={{
+                      backgroundColor: '#58A7FF',
+                    }}
+                  >
+                    Ver
+                  </ShowButton>
 
-                    <UpdateButton idItemUpdate={idItem}>
-                      {'Atualizar'}
-                    </UpdateButton>
-                    <DeleteButton idItemToDelete={idItem}>
-                      {'Remover'}
-                    </DeleteButton>
-                  </div>
+                  <UpdateButton idItemUpdate={idItem}>
+                    {'Atualizar'}
+                  </UpdateButton>
+                  <DeleteButton idItemToDelete={idItem}>
+                    {'Remover'}
+                  </DeleteButton>
                 </div>
-              );
-            })
+              </div>
+            );
+          })
           : itemsShow.map(({ idItem, nameItem }) => {
-              return (
-                <div
-                  className={styles.item}
-                  key={idItem}
-                  style={{ display: 'grid' }}
-                >
-                  <p>{nameItem}</p>
-                  {title.toLowerCase() === 'Itens acabando'.toLowerCase() ? (
-                    <p>{}</p>
-                  ) : null}
-                  <div className={styles.buttonsWrapper}>
-                    <ShowButton
-                      idItemShow={idItem}
-                      style={{ backgroundColor: 'white' }}
-                    >
-                      Ver
-                    </ShowButton>
-                  </div>
+            return (
+              <div
+                className={styles.item}
+                key={idItem}
+                style={{ display: 'grid' }}
+              >
+                <p>{nameItem}</p>
+                {title.toLowerCase() === 'Itens acabando'.toLowerCase() ? (
+                  <p>{ }</p>
+                ) : null}
+                <div className={styles.buttonsWrapper}>
+                  <ShowButton
+                    idItemShow={idItem}
+                    style={{ backgroundColor: 'white' }}
+                  >
+                    Ver
+                  </ShowButton>
                 </div>
-              );
-            })}
+              </div>
+            );
+          })}
       </div>
     </div>
   );
