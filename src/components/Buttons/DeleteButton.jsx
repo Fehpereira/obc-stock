@@ -12,11 +12,14 @@ const DeleteButton = ({
   const navigate = useNavigate();
 
   function deleteItem(idItemToDelete) {
-    const newListItems = items.filter((item) => item.idItem !== idItemToDelete);
-    setItems(newListItems);
-    localStorage.setItem('items', JSON.stringify(newListItems));
-
-    idItem && navigate('/');
+    const itemToDelete = items.find(item => item.idItem === idItemToDelete)
+    const option = confirm(`Tem certeza que deseja excluir o item: ${itemToDelete.nameItem}`)
+    if (option) {
+      const newListItems = items.filter((item) => item.idItem !== idItemToDelete);
+      setItems(newListItems);
+      localStorage.setItem('items', JSON.stringify(newListItems));
+      idItem && navigate('/');
+    }
   }
 
   return (
