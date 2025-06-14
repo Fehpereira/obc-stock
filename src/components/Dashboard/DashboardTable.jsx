@@ -85,7 +85,7 @@ const DashboardTable = ({ title, itemsShow }) => {
               </div>
             );
           })
-          : itemsShow.map(({ idItem, nameItem }) => {
+          : itemsShow.map(({ idItem, nameItem, total }) => {
             return (
               <div
                 className={styles.item}
@@ -94,7 +94,7 @@ const DashboardTable = ({ title, itemsShow }) => {
               >
                 <p>{nameItem}</p>
                 {title.toLowerCase() === 'Itens acabando'.toLowerCase() ? (
-                  <p>{ }</p>
+                  <p>{total}</p>
                 ) : null}
                 <div className={styles.buttonsWrapper}>
                   <ShowButton
