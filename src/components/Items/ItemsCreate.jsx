@@ -43,7 +43,7 @@ const ItemsCreate = ({ callback, children }) => {
   return (
     <Items>
       <section className={`container`}>
-        <hr />
+        <hr style={{margin: '0'}}/>
         {children}
         <form onSubmit={handleSubmit} className={styles.form}>
           <Input

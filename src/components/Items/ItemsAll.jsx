@@ -21,7 +21,7 @@ const ItemsAll = () => {
           <DashboardTable title={'ID'} />
         ) : (
           <>
-            <hr style={{ width: '100%' }} />
+            <hr style={{ position: 'relative', zIndex: '-1', width: '100%', margin: '0' }} />
             <h2 className="empty">A lista está vazia!</h2>
             <Link to={'/items/new'}>
               Clique aqui para adicionar um novo item na lista

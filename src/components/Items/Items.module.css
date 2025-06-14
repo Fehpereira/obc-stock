@@ -1,8 +1,11 @@
 .links {
-  margin: 1rem;
+  display: inline-block;
+  margin-inline: 1rem;
+  padding: .5rem;
 }
 
 .active {
-  text-decoration: underline;
+  box-shadow: 0 2px 0 0 white;
+  border-bottom: 2px solid white;
   color: white;
 }
