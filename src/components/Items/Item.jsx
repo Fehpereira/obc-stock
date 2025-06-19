@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { DashboardContext } from '../../hooks/DashboardContext';
 import { useParams } from 'react-router-dom';
 import Error from '../Utils/Error';
@@ -8,22 +8,12 @@ import DeleteButton from '../Buttons/DeleteButton';
 import styles from './Item.module.css';
 
 const Item = () => {
-  const { showItem, setShowItem, items } = useContext(DashboardContext);
-
+  const { items } = useContext(DashboardContext);
   const { idItem } = useParams();
 
-  useEffect(() => {
-    const itemToShow = items.find((item) => item.idItem === idItem);
-    setShowItem(itemToShow);
-  }, [idItem, items]);
+  const itemToShow = items.find((item) => item.idItem === idItem);
 
-  useEffect(() => {
-    return () => {
-      setShowItem({});
-    };
-  }, []);
-
-  if (!showItem) return <Error />;
+  if (!itemToShow) return <Error />;
 
   const {
     nameItem,
@@ -33,7 +23,7 @@ const Item = () => {
     description,
     createdAt,
     updatedAt,
-  } = showItem;
+  } = itemToShow;
 
   return (
     <>
