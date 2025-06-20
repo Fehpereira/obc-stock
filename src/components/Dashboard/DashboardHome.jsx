@@ -9,6 +9,7 @@ import Header from '../Utils/Header';
 const DashboardHome = () => {
   const { items, itemsRunningOut, recentItems, totalInventory } =
     useContext(DashboardContext);
+  console.log(totalInventory)
 
   return (
     <>
@@ -21,7 +22,7 @@ const DashboardHome = () => {
         />
         <DashboardShowData
           reference={'Inventário total'}
-          total={totalInventory}
+          total={typeof totalInventory === 'number' ? totalInventory : 0}
           timing={45}
         />
         <DashboardShowData
