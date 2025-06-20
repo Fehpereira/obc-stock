@@ -25,7 +25,7 @@ const DashboardShowData = ({ reference, total, timing }) => {
     }, timing * Math.random());
 
     return () => clearInterval(interval);
-  }, [total]);
+  }, [total, timing]);
 
   return (
     <div className={styles.container}>
